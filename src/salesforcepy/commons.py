@@ -6,13 +6,14 @@
 .. versionadded:: 1.0.0
 
 """
-from __future__ import absolute_import
-
+# Built-in imports
 import collections
 import logging
-import requests
 import xml.etree.ElementTree as ET
 from urllib.parse import urlparse
+
+# Third-party imports
+import requests
 
 DEFAULT_API_VERSION = '37.0'
 
