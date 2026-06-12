@@ -272,7 +272,7 @@ class BaseRequest(object):
         except Exception as e:
             self.exceptions.append(e)
             logger.error('%s %s %s' % (self.http_method, service, self.status))
-            logger.error(e.message)
+            logger.error(str(e))
             return
         finally:
             return response
@@ -308,7 +308,7 @@ class OAuthRequest(BaseRequest):
         except Exception as e:
             self.exceptions.append(e)
             logger.error('%s %s %s' % (self.http_method, service, self.status))
-            logger.error(e.message)
+            logger.error(str(e))
             return
         finally:
             return response
@@ -370,6 +370,6 @@ class SoapLoginRequest(BaseRequest):
         except Exception as e:
             self.exceptions.append(e)
             logger.error('%s %s %s' % (self.http_method, service, self.status))
-            logger.error(e.message)
+            logger.error(str(e))
         finally:
             return response
